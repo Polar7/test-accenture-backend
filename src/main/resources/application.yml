@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /api-test-accenture
+  port: 9090
+
+spring:
+  application:
+    name: test-accenture-backend
+
+  datasource:
+    url: jdbc:postgresql://db-accenture-test.postgres.database.azure.com:5432/test-accenture-backend
+    username: polar
+    password: test-db-123
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+springdoc:
+  api-docs:
+    path: /swagger-ui.html
