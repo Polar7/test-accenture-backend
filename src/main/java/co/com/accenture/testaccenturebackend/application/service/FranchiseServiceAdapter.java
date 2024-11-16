@@ -6,6 +6,8 @@ import co.com.accenture.testaccenturebackend.application.dto.UpdateFranchiseDtoR
 import co.com.accenture.testaccenturebackend.domain.model.Franchise;
 import co.com.accenture.testaccenturebackend.domain.repository.IFranchiseRepositoryPort;
 import co.com.accenture.testaccenturebackend.domain.usecase.IFranchiseUseCasePort;
+import co.com.accenture.testaccenturebackend.infrastructure.exception.FranchiseNameAlreadyExistsExcepcion;
+import co.com.accenture.testaccenturebackend.infrastructure.exception.FranchiseNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,13 +36,13 @@ public class FranchiseServiceAdapter implements IFranchiseUseCasePort {
      * Guarda una nueva franquicia
      * @param dtoNewFranchise Dto de la franquicia a crear
      * @return Dto con respuesta de la operacion
-     * @exception RuntimeException Si ya existe una franquicia con el mismo nombre
+     * @exception FranchiseNameAlreadyExistsExcepcion Si ya existe una franquicia con el mismo nombre
      */
     @Override
     public GenericDtoResponse saveFranchise(SaveFranchiseDtoRequest dtoNewFranchise) {
 
         if (franchiseRepository.findFranchiseByName(dtoNewFranchise.getName()).isPresent()) {
-            throw new RuntimeException("Ya existe una Franquicia con el nombre ingresado");
+            throw new FranchiseNameAlreadyExistsExcepcion();
         }
 
         franchiseRepository.saveFranchise(dtoNewFranchise.getName());
@@ -51,20 +53,20 @@ public class FranchiseServiceAdapter implements IFranchiseUseCasePort {
      * Modifica el nombre de una franquicia existente
      * @param dtoUpdateFranchise Franquicia a editar
      * @return Dto con respuesta de la operacion
-     * @exception RuntimeException Si ya existe una franquicia con el mismo nombre
-     * @exception RuntimeException Si no existe una franquicia con el id dado
+     * @exception FranchiseNameAlreadyExistsExcepcion Si ya existe una franquicia con el mismo nombre
+     * @exception FranchiseNotFoundException Si no existe una franquicia con el id dado
      */
     @Override
     public GenericDtoResponse updateFranchise(UpdateFranchiseDtoRequest dtoUpdateFranchise) {
 
         if (franchiseRepository.findFranchiseByName(dtoUpdateFranchise.getName()).isPresent()) {
-            throw new RuntimeException("Ya existe una franquicia con ese nombre.");
+            throw new FranchiseNameAlreadyExistsExcepcion();
         }
 
         Optional<Franchise> modifyFranchise = franchiseRepository.findFranchiseById(dtoUpdateFranchise.getId());
 
         if (modifyFranchise.isEmpty()) {
-            throw new RuntimeException("No existe una franquicia con el id dado.");
+            throw new FranchiseNotFoundException();
         }
 
         franchiseRepository.updateFranchise(
