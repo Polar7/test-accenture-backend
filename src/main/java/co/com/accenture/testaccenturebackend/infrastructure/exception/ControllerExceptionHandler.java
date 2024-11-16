@@ -17,7 +17,7 @@ public class ControllerExceptionHandler {
      * @param e Excepcion lanzada
      * @return ProblemDetail con codigo de estado CONFLICT y su mensaje
      */
-    @ExceptionHandler({FranchiseNameAlreadyExistsExcepcion.class, FranchiseNotFoundException.class})
+    @ExceptionHandler({FranchiseNameAlreadyExistsExcepcion.class, FranchiseNotFoundException.class, BranchNotFoundException.class})
     public ProblemDetail functionalException(RuntimeException e) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, e.getMessage());
     }

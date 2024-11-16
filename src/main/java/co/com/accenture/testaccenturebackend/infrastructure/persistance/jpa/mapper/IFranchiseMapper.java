@@ -1,4 +1,4 @@
-package co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa;
+package co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.mapper;
 
 import co.com.accenture.testaccenturebackend.domain.model.Franchise;
 import co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.entity.FranchiseEntity;

@@ -2,7 +2,7 @@ package co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.rep
 
 import co.com.accenture.testaccenturebackend.domain.model.Franchise;
 import co.com.accenture.testaccenturebackend.domain.repository.IFranchiseRepositoryPort;
-import co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.IFranchiseMapper;
+import co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.mapper.IFranchiseMapper;
 import co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.crud.IFranchiseCrudRepository;
 import co.com.accenture.testaccenturebackend.infrastructure.persistance.jpa.entity.FranchiseEntity;
 import lombok.RequiredArgsConstructor;
