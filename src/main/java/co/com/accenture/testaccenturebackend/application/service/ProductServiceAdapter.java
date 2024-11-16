@@ -2,8 +2,8 @@ package co.com.accenture.testaccenturebackend.application.service;
 
 import co.com.accenture.testaccenturebackend.application.dto.GenericDtoResponse;
 import co.com.accenture.testaccenturebackend.application.dto.SaveProductDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateNameProductDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateStockProductDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateProductNameDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateProductStockDtoRequest;
 import co.com.accenture.testaccenturebackend.domain.model.Franchise;
 import co.com.accenture.testaccenturebackend.domain.model.Product;
 import co.com.accenture.testaccenturebackend.domain.repository.IBranchRepositoryPort;
@@ -100,7 +100,7 @@ public class ProductServiceAdapter implements IProductUseCasePort {
      * @return Dto con respuesta de la operacion
      */
     @Override
-    public GenericDtoResponse updateStockProduct(UpdateStockProductDtoRequest modifyProduct) {
+    public GenericDtoResponse updateStockProduct(UpdateProductStockDtoRequest modifyProduct) {
 
         Optional<Product> product = productRepository.findProductById(modifyProduct.getId());
 
@@ -124,7 +124,7 @@ public class ProductServiceAdapter implements IProductUseCasePort {
      * @return Dto con respuesta de la operacion
      */
     @Override
-    public GenericDtoResponse updateNameProduct(UpdateNameProductDtoRequest modifyProduct) {
+    public GenericDtoResponse updateNameProduct(UpdateProductNameDtoRequest modifyProduct) {
 
         Optional<Product> product = productRepository.findProductById(modifyProduct.getId());
 

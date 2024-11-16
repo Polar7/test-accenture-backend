@@ -5,9 +5,12 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Dto para actualizar el nombre de una Franquicia
+ */
 @Getter
 @Setter
-public class UpdateFranchiseDtoRequest {
+public class UpdateFranchiseNameDtoRequest {
 
     /**
      * Id de la franquicia a modificar

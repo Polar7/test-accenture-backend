@@ -2,7 +2,7 @@ package co.com.accenture.testaccenturebackend.domain.usecase;
 
 import co.com.accenture.testaccenturebackend.application.dto.GenericDtoResponse;
 import co.com.accenture.testaccenturebackend.application.dto.SaveBranchDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateBranchDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateBranchNameDtoRequest;
 import co.com.accenture.testaccenturebackend.domain.model.Branch;
 
 import java.util.List;
@@ -30,6 +30,6 @@ public interface IBranchUseCasePort {
      * @param dtoUpdateBranch Sucursal a editar
      * @return Dto con respuesta de la operacion
      */
-    GenericDtoResponse updateBranch(UpdateBranchDtoRequest dtoUpdateBranch);
+    GenericDtoResponse updateBranch(UpdateBranchNameDtoRequest dtoUpdateBranch);
 
 }

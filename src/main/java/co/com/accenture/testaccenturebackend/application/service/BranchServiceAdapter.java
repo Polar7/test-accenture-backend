@@ -2,7 +2,7 @@ package co.com.accenture.testaccenturebackend.application.service;
 
 import co.com.accenture.testaccenturebackend.application.dto.GenericDtoResponse;
 import co.com.accenture.testaccenturebackend.application.dto.SaveBranchDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateBranchDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateBranchNameDtoRequest;
 import co.com.accenture.testaccenturebackend.domain.model.Branch;
 import co.com.accenture.testaccenturebackend.domain.repository.IBranchRepositoryPort;
 import co.com.accenture.testaccenturebackend.domain.repository.IFranchiseRepositoryPort;
@@ -69,7 +69,7 @@ public class BranchServiceAdapter implements IBranchUseCasePort {
      * @exception BranchNotFoundException Si la sucursal a modificar no existe
      */
     @Override
-    public GenericDtoResponse updateBranch(UpdateBranchDtoRequest dtoUpdateBranch) {
+    public GenericDtoResponse updateBranch(UpdateBranchNameDtoRequest dtoUpdateBranch) {
 
         Optional<Branch> modifyBranch = branchRepository.findBranchById(dtoUpdateBranch.getId());
 

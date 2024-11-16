@@ -4,11 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Dto para actualizar el stock de un producto
+ * Dto para actualizar el nombre de un producto
  */
 @Getter
 @Setter
-public class UpdateStockProductDtoRequest {
+public class UpdateProductNameDtoRequest {
 
     /**
      * Id del producto
@@ -16,7 +16,7 @@ public class UpdateStockProductDtoRequest {
     private Long id;
 
     /**
-     * Unidades disponibles a actualizar
+     * Nombre a modificar
      */
-    private Long stock;
+    private String name;
 }

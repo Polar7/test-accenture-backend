@@ -2,7 +2,7 @@ package co.com.accenture.testaccenturebackend.application.service;
 
 import co.com.accenture.testaccenturebackend.application.dto.GenericDtoResponse;
 import co.com.accenture.testaccenturebackend.application.dto.SaveFranchiseDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateFranchiseDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateFranchiseNameDtoRequest;
 import co.com.accenture.testaccenturebackend.domain.model.Franchise;
 import co.com.accenture.testaccenturebackend.domain.repository.IFranchiseRepositoryPort;
 import co.com.accenture.testaccenturebackend.domain.usecase.IFranchiseUseCasePort;
@@ -57,7 +57,7 @@ public class FranchiseServiceAdapter implements IFranchiseUseCasePort {
      * @exception FranchiseNotFoundException Si no existe una franquicia con el id dado
      */
     @Override
-    public GenericDtoResponse updateFranchise(UpdateFranchiseDtoRequest dtoUpdateFranchise) {
+    public GenericDtoResponse updateFranchise(UpdateFranchiseNameDtoRequest dtoUpdateFranchise) {
 
         if (franchiseRepository.findFranchiseByName(dtoUpdateFranchise.getName()).isPresent()) {
             throw new FranchiseNameAlreadyExistsExcepcion();

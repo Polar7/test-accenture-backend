@@ -6,11 +6,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Dto para actualizar una Sucursal
+ * Dto para actualizar el nombre de una Sucursal
  */
 @Getter
 @Setter
-public class UpdateBranchDtoRequest {
+public class UpdateBranchNameDtoRequest {
 
     /**
      * Id de la sucursal a modificar

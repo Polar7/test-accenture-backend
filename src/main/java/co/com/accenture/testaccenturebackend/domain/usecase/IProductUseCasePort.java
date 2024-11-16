@@ -2,8 +2,8 @@ package co.com.accenture.testaccenturebackend.domain.usecase;
 
 import co.com.accenture.testaccenturebackend.application.dto.GenericDtoResponse;
 import co.com.accenture.testaccenturebackend.application.dto.SaveProductDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateNameProductDtoRequest;
-import co.com.accenture.testaccenturebackend.application.dto.UpdateStockProductDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateProductNameDtoRequest;
+import co.com.accenture.testaccenturebackend.application.dto.UpdateProductStockDtoRequest;
 import co.com.accenture.testaccenturebackend.domain.model.Product;
 
 import java.util.List;
@@ -38,14 +38,14 @@ public interface IProductUseCasePort {
      * @param modifyProduct Dto con la informacion a modificar
      * @return Dto con respuesta de la operacion
      */
-    GenericDtoResponse updateStockProduct(UpdateStockProductDtoRequest modifyProduct);
+    GenericDtoResponse updateStockProduct(UpdateProductStockDtoRequest modifyProduct);
 
     /**
      * Actualiza el nombre de un producto dado su id
      * @param modifyProduct Dto con la informacion a modificar
      * @return Dto con respuesta de la operacion
      */
-    GenericDtoResponse updateNameProduct(UpdateNameProductDtoRequest modifyProduct);
+    GenericDtoResponse updateNameProduct(UpdateProductNameDtoRequest modifyProduct);
 
     /**
      * Elimina un producto dado su id
