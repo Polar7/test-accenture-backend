@@ -37,5 +37,11 @@ Puede navegar a través de las distintas opciones en la interfaz de Swagger, sin
 
 ![image](https://github.com/user-attachments/assets/a989061a-bb2a-4244-9a9e-366fea278661)
 
+## Modelo E/R
+Se realizó un modelo entidad/relación para un mejor entendimiento del ejercicio.
+![Entity Relationship Diagram1](https://github.com/user-attachments/assets/8e144ded-be75-4816-9927-b7d1ca083b5e)
+
+## Conclusión
+
 Para el desarrollo se usó programación funcional y se implementó una arquitectura limpia.
 Espero sea de su agrado.
