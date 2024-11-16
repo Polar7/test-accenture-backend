@@ -37,6 +37,10 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+bootJar {
+    archiveFileName = 'app-test-accenture.jar' // Nombre personalizado del archivo JAR
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
